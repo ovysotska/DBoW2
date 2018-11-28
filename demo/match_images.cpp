@@ -1,3 +1,6 @@
+/**
+* partially taken from  Dorian Galvez-Lopez DBow2 demo
+ */
 #include <iostream>
 #include <string>
 #include <vector>
