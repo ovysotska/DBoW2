@@ -50,6 +50,17 @@ if(BUILD_Demo)
   add_executable(demo demo/demo.cpp)
   target_link_libraries(demo ${PROJECT_NAME} ${OpenCV_LIBS})
   file(COPY demo/images DESTINATION ${CMAKE_BINARY_DIR}/)
+  add_library(list_dir demo/list_dir.cpp)
+  add_executable(create_vocabulary demo/create_vocabulary.cpp)
+  target_link_libraries(create_vocabulary
+    list_dir 
+    ${PROJECT_NAME} ${OpenCV_LIBS}
+  )
+  add_executable(match_images demo/match_images.cpp)
+  target_link_libraries(match_images
+    list_dir 
+    ${PROJECT_NAME} ${OpenCV_LIBS}
+  )
 endif(BUILD_Demo)
 
 configure_file(src/DBoW2.cmake.in
